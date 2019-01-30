@@ -34,40 +34,40 @@ Next, navigate to the files you just pasted in **http://app.example.com/** and l
 ## `Last`
 The last thing to get your laravel app up and running on your subdomain will be the **.htaccess** trick. Still on your **http://app.example.com/** directory, open up your **.htaccess** file and copy these lines to replace it:
 
-> <IfModule mod_rewrite.c>
->    <IfModule mod_negotiation.c>
->        Options -MultiViews
->    </IfModule>
+> `<IfModule mod_rewrite.c><br>`
+>    `<IfModule mod_negotiation.c>`<br>
+>        Options -MultiViews<br>
+>    `</IfModule>`<br>
 >
->    RewriteEngine On
+>    RewriteEngine On<br>
 >
->    # Redirect Trailing Slashes If Not A Folder...
->    RewriteCond %{REQUEST_FILENAME} !-d
->    RewriteRule ^(.*)/$ /$1 [L,R=301]
+>    `# Redirect Trailing Slashes If Not A Folder...`<BR>
+>    RewriteCond %{REQUEST_FILENAME} !-d<BR>
+>    RewriteRule ^(.*)/$ /$1 [L,R=301]<br>
 >
->    # Handle Front Controller...
->    RewriteCond %{REQUEST_FILENAME} !-d
->    RewriteCond %{REQUEST_FILENAME} !-f
->    RewriteRule ^ index.php [L]
+>    `# Handle Front Controller...` <br>
+>    RewriteCond %{REQUEST_FILENAME} !-d<br>
+>    RewriteCond %{REQUEST_FILENAME} !-f<br>
+>    RewriteRule ^ index.php [L]<br>
 >   
->    <Files .env>
->    order allow,deny
->    Deny from all
->    </Files>
+>    `<Files .env>` <br>
+>    order allow,deny<br>
+>    Deny from all<br>
+>    `</Files>` <br>
 >
->    Options -Indexes
+>    Options -Indexes<br>
 >
->    # Handle Authorization Header
->    RewriteCond %{HTTP:Authorization} .
->    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-> </IfModule>
+>    `# Handle Authorization Header`<br>
+>    RewriteCond %{HTTP:Authorization} .<br>
+>    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]<br>
+> `</IfModule>`<br>
 >
-> # php -- BEGIN cPanel-generated handler, do not edit
-> # Set the “ea-php72” package as the default “PHP” programming language.
-> <IfModule mime_module>
->   AddType application/x-httpd-ea-php72 .php .php7 .phtml
-> </IfModule>
-> # php -- END cPanel-generated handler, do not edit
+> `# php -- BEGIN cPanel-generated handler, do not edit`<br>
+> `# Set the “ea-php72” package as the default “PHP” programming language.`<br>
+> `<IfModule mime_module>`<br>
+>    AddType application/x-httpd-ea-php72 .php .php7 .phtml<br>
+> `</IfModule>`<br>
+> `# php -- END cPanel-generated handler, do not edit`<br>
 
 
 ### AND THERE WE GO... **http://app.example.com/** SHOULD BE ACCESSIBLE VIA THE WEB URL...
