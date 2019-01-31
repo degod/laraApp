@@ -69,6 +69,7 @@ The last thing to get your laravel app up and running on your subdomain will be 
 > `</IfModule>`<br>
 > `# php -- END cPanel-generated handler, do not edit`<br>
 
+Reference to the .htaccess file in this repo for comparison and cross-checking..
 
 ### AND THERE WE GO... **http://app.example.com/** SHOULD BE ACCESSIBLE VIA THE WEB URL...
 
